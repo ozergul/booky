@@ -4,11 +4,11 @@
 
 .item {
   padding: 0;
-  color: #ccc;
+  color: #000;
   width: 100%;
 
   a {
-    color: #ccc;
+    color: #000;
     text-decoration: none;
     display: flex;
     width: 100%;
@@ -59,4 +59,24 @@
   height: 16px;
   margin-right: 7px;
   flex-shrink: 0;
+}
+
+@media (prefers-color-scheme: dark) {
+  .item {
+    color: #ccc;
+
+    a {
+      color: #ccc;
+
+      &:hover {
+        color: var(--primary-color);
+      }
+    }
+  }
+
+  .title {
+    &:hover {
+      color: var(--primary-color);
+    }
+  }
 }

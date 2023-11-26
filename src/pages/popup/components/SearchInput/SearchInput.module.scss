@@ -5,11 +5,18 @@
   outline: none;
   font-size: 14px;
   background-color: transparent;
-  color: #ccc;
-  border: 1px solid #888;
+  color: #000;
+  border: 1px solid #333;
   border-radius: 4px;
 
   &::placeholder {
+    color: #000;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .input {
     color: #ccc;
+    border: 1px solid #888;
   }
 }
