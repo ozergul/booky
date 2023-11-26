@@ -12,7 +12,10 @@ const searchInBookmarks = (node: BookmarkTreeNode, searchTerm: string, path = []
   let matches = [];
   node.children.forEach(child => {
     const newPath = [...path, child];
-    if (child.title.toLowerCase().includes(searchTerm.toLowerCase())) {
+
+    const search = searchTerm.toLowerCase();
+
+    if (child.title?.toLowerCase?.().includes?.(search) || child.url?.toLowerCase?.().includes?.(search)) {
       matches.push(newPath);
     }
 
@@ -38,6 +41,10 @@ const Popup = () => {
   }, []);
 
   const rootBookmark = useMemo(() => bookmarks?.[0] || ({ children: [] } as BookmarkTreeNode), [bookmarks]);
+  const bookmarksBar = useMemo(
+    () => rootBookmark.children?.[0] || ({ children: [] } as BookmarkTreeNode),
+    [rootBookmark],
+  );
 
   const handleInputOnChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setSearchValue(e.target.value);
@@ -45,12 +52,12 @@ const Popup = () => {
 
   const filteredBookmarks = useMemo(() => {
     if (!searchValue.trim()) {
-      return rootBookmark.children || [];
+      return bookmarksBar.children || [];
     }
 
-    const matches = searchInBookmarks(rootBookmark, searchValue);
+    const matches = searchInBookmarks(bookmarksBar, searchValue);
     return formatMatches(matches);
-  }, [rootBookmark, searchValue]);
+  }, [bookmarksBar, searchValue]);
 
   return (
     <div>
