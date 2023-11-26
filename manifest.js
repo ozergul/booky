@@ -9,7 +9,7 @@ const manifest = {
   name: packageJson.name,
   version: packageJson.version,
   description: packageJson.description,
-  permissions: ['storage', 'bookmarks', 'favicon'],
+  permissions: ['bookmarks', 'favicon'],
   background: {
     service_worker: 'src/pages/background/index.js',
     type: 'module',
