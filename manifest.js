@@ -21,14 +21,7 @@ const manifest = {
   icons: {
     128: 'icon-128.png',
   },
-  content_scripts: [
-    {
-      matches: ['http://*/*', 'https://*/*', '<all_urls>'],
-      js: ['src/pages/content/index.js'],
-      // KEY for cache invalidation
-      css: [],
-    },
-  ],
+  content_scripts: [],
   web_accessible_resources: [
     {
       resources: ['assets/js/*.js', 'assets/css/*.css', 'icon-128.png', 'icon-34.png', '_favicon/*'],
