@@ -25,7 +25,7 @@ const manifest = {
   content_scripts: [],
   web_accessible_resources: [
     {
-      resources: ['assets/js/*.js', 'assets/css/*.css', 'icon-128.png', 'icon-34.png', '_favicon/*'],
+      resources: ['assets/js/*.js', 'assets/css/*.css', 'icon-48.png','icon-128.png', 'icon-34.png', '_favicon/*'],
       matches: ['<all_urls>'],
       extension_ids: ['*'],
     },
